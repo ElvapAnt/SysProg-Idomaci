@@ -93,7 +93,7 @@ class Program
         }
     }
 
-    static async Task Main(string[] args)
+    static void Main(string[] args)
     {
         HttpListener listener = new HttpListener();
         listener.Prefixes.Add("http://localhost:5050/");
@@ -101,27 +101,34 @@ class Program
         LoadCache();
         Console.WriteLine("Web server started at port 5050");
 
-        await ProcessRequestAsync(listener);
 
-        listener.Stop();
-        listener.Close();
-    }
-    private static async Task ProcessRequestAsync(HttpListener listener)
-    {
         while (listener.IsListening)
         {
-            HttpListenerContext context = await listener.GetContextAsync();
+            HttpListenerContext context = listener.GetContext();
             HttpContextTimer httpContextTime = new HttpContextTimer();
             httpContextTime.context = context;
             httpContextTime.timer = new Stopwatch();
             httpContextTime.timer.Start();
-            await ProcessRequestExecuteAsync(httpContextTime);
+            ProcessRequest(httpContextTime);
+        }
+
+        listener.Stop();
+        listener.Close();
+    }
+    private static void ProcessRequest(HttpContextTimer httpContextTime)
+    {
+        if (!ThreadPool.QueueUserWorkItem(ProcessRequestExecute, httpContextTime))
+        {
+            httpContextTime.context.Response.StatusCode = 500;
+            HttpResponse("500 - Connection Failed", null, httpContextTime);
         }
     }
-    private static async Task ProcessRequestExecuteAsync(HttpContextTimer httpContextTime)
+    private static async void ProcessRequestExecute(object state)
     {
 
         byte[] res_data = null;
+
+        HttpContextTimer httpContextTime = (HttpContextTimer)state;
 
         HttpListenerContext context = httpContextTime.context;
 

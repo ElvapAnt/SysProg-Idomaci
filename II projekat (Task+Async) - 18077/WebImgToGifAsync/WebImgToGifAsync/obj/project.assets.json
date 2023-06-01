@@ -49,11 +49,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\SysProg Domaci\\II projekat - Task + Async\\WebImgToGifAsync\\WebImgToGifAsync\\WebImgToGifAsync.csproj",
+      "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\SysProg Domaci\\14 zad repository\\SysProg---14.-Zadatak\\II projekat (Task+Async) - 18077\\WebImgToGifAsync\\WebImgToGifAsync\\WebImgToGifAsync.csproj",
       "projectName": "WebImgToGifAsync",
-      "projectPath": "C:\\Users\\Korisnik\\Desktop\\SysProg Domaci\\II projekat - Task + Async\\WebImgToGifAsync\\WebImgToGifAsync\\WebImgToGifAsync.csproj",
+      "projectPath": "C:\\Users\\Korisnik\\Desktop\\SysProg Domaci\\14 zad repository\\SysProg---14.-Zadatak\\II projekat (Task+Async) - 18077\\WebImgToGifAsync\\WebImgToGifAsync\\WebImgToGifAsync.csproj",
       "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Korisnik\\Desktop\\SysProg Domaci\\II projekat - Task + Async\\WebImgToGifAsync\\WebImgToGifAsync\\obj\\",
+      "outputPath": "C:\\Users\\Korisnik\\Desktop\\SysProg Domaci\\14 zad repository\\SysProg---14.-Zadatak\\II projekat (Task+Async) - 18077\\WebImgToGifAsync\\WebImgToGifAsync\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
